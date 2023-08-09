@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mychatapplogo1">
+
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/textheading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgLogo"
+        android:fontFamily="@font/raleway"
+        android:padding="@dimen/_17sdp"
+        android:text="D Chat Will Send OTP To Your Entered Number"
+        android:textAlignment="center"
+        android:textColor="#6e6e6e"
+        android:textSize="@dimen/_17sdp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <RelativeLayout
+        android:id="@+id/centerhorizontalline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+    </RelativeLayout>
+
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/CountryCodePicker"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_above="@id/centerhorizontalline"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/_70sdp"
+        android:layout_marginRight="@dimen/_70sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:ccp_areaCodeDetectedCountry="true"
+        app:ccp_autoDetectCountry="true">
+
+    </com.hbb20.CountryCodePicker>
+
+
+    <EditText
+        android:id="@+id/edtPhone_Number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_below="@id/centerhorizontalline"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:hint="Enter Your Number Here"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black">
+
+    </EditText>
+
+
+    <android.widget.Button
+        android:id="@+id/btnSend_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@id/edtPhone_Number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="#25d366"
+        android:paddingLeft="@dimen/_35sdp"
+        android:paddingRight="@dimen/_35sdp"
+        android:text="Sent OTP"
+        android:textColor="@color/white"
+        android:textSize="15sp">
+
+    </android.widget.Button>
+
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSend_otp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible">
+
+    </ProgressBar>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Set_Profile_Activity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cv_User_Image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/raleway"
+        android:text="Save Your Profile"
+        android:textColor="#25d366"
+        android:textSize="30sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_User_Image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_above="@+id/edtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="130dp">
+
+
+        <ImageView
+            android:id="@+id/img_Imageofprofile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/defaultprofile">
+
+        </ImageView>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:hint="Enter Your Name "
+        android:inputType="textCapWords">
+
+    </EditText>
+
+    <android.widget.Button
+        android:id="@+id/edtSaveProfile"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        android:background="#25d366"
+        android:text="Save Profile"
+
+        android:textColor="@color/white">
+
+    </android.widget.Button>
+
+
+    <ProgressBar
+        android:id="@+id/progressbarofsetProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtSaveProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible">
+
+    </ProgressBar>
+
+</RelativeLayout>
