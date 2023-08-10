@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     String codesent;
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,19 +63,21 @@ public class MainActivity extends AppCompatActivity {
                 String number;
                 number = mgetphonenumber.getText().toString();
                 if (number.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Please Enter Your Mobile Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please Enter YOur number", Toast.LENGTH_SHORT).show();
                 } else if (number.length() < 10) {
                     Toast.makeText(getApplicationContext(), "Please Enter correct number", Toast.LENGTH_SHORT).show();
                 } else {
-                    mprogressbarofmain.setVisibility(view.VISIBLE);
+
+                    mprogressbarofmain.setVisibility(View.VISIBLE);
                     phonenumber = countrycode + number;
 
                     PhoneAuthOptions options = PhoneAuthOptions.newBuilder(firebaseAuth)
                             .setPhoneNumber(phonenumber)
-                            .setTimeout(69L, TimeUnit.SECONDS)
+                            .setTimeout(60L, TimeUnit.SECONDS)
                             .setActivity(MainActivity.this)
                             .setCallbacks(mCallbacks)
                             .build();
+
 
                     PhoneAuthProvider.verifyPhoneNumber(options);
 
@@ -83,16 +88,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                //space for automatically fetch otp at this time deep don't know about this code
+                //how to automatically fetch code here
             }
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-
+                Log.e(TAG, "onVerificationFailed: "+e.getMessage() );
             }
+
 
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
