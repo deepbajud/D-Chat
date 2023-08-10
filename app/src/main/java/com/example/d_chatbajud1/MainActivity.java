@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                //space for automatically fetch otp at this thime deep don't know about this code
+                //space for automatically fetch otp at this time deep don't know about this code
             }
 
             @Override
