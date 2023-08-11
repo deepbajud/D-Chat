@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Chat_Activity">
+    android:layout_height="match_parent"
+    tools:context=".Chat">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -29,6 +29,8 @@
                 android:textStyle="bold">
 
             </TextView>
+
+
 
 
         </RelativeLayout>

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     String codesent;
+    
 
     private static final String TAG = "MainActivity";
 
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+
             }
         });
 
@@ -121,9 +124,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            Intent intent = new Intent(MainActivity.this, Chat_Activity.class);
+            Intent intent = new Intent(MainActivity.this, Chat.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
+
+
+
+
         }
 
 
